@@ -42,6 +42,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="javascript/libs/parsley.js"></script>
+<script src="javascript/libs/chart.min.js"></script>
 <script src="javascript/MainController.js"></script>
 </body>
 </html>

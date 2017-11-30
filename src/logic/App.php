@@ -1,5 +1,8 @@
 <?php
 
+require_once 'DatasetHandler.php';
+require_once 'Space.php';
+
 class App
 {
     private $datasetNumber;
@@ -18,7 +21,7 @@ class App
     }
 
     /**
-     * App handler 
+     * App handler.
      *
      * @return mixed
      */
@@ -26,8 +29,9 @@ class App
     {
         $datasetHandler = new DatasetHandler($this->datasetNumber);
         $dataset = $datasetHandler->getData();
+
         $space = new Space($dataset, $this->clustersAmount);
-        $result = $space->bootstrap()->performAlgorithm($this->iterationsAmount);
+        $result = $space->bootstrap()->performAlgorithm($this->iterationsAmount)->getResultArray();
         
         return $result;
     }

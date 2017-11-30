@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Point.php';
+
 class DatasetHandler
 {
     /** Path to the files with data */
@@ -17,7 +19,7 @@ class DatasetHandler
     }
 
     /**
-     * Read data from text file
+     * Read data from text file.
      *
      * @return array
      */
@@ -30,10 +32,7 @@ class DatasetHandler
         foreach ($rows as $row) {
             preg_match_all('!\d+!', $row, $matches);
 
-            array_push($data, [
-                (int) $matches[0][0],
-                (int) $matches[0][1]
-            ]);
+            array_push($data, new Point((int) $matches[0][0], (int) $matches[0][1]));
         }
 
         return $data;
